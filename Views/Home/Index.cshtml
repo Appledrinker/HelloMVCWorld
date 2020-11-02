@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model HelloMVCWorld.Models.Movie
+@{
+    Layout = null;
+}
+@{ 
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Title</title>
+</head>
+<body>
+    The movie <b>@Model.Title</b> was released @Model.ReleaseDate.ToLongDateString().
+    @*@await Html.PartialAsync("_Greeting")
+    <span>More stuff here...</span>*@
+    @for (int i = 0; i < 3; i++)
+    {
+        @await Html.PartialAsync("_Greeting", Model, new ViewDataDictionary(ViewData) { { "index", i} })
+    }
+</body>
+</html>
