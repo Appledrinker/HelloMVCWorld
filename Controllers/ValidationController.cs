@@ -18,7 +18,7 @@ namespace HelloMVCWorld.Controllers
         public IActionResult SimpleValidation(Models.WebUser webUser)
         {
             if (ModelState.IsValid)
-                return Content("Thank you!");
+                return Content("Thank you!!");
             else
                 return View(webUser);
         }
